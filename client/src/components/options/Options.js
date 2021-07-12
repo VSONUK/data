@@ -6,10 +6,7 @@ import * as classes from "./Options.module.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import VideoContext from "../../context/VideoContext";
 import Hang from "../../assests/hang.svg";
-import {
-  WhatsappShareButton,
-  WhatsappIcon,
-} from "react-share";
+import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import {
   UserOutlined,
   CopyOutlined,
@@ -73,18 +70,14 @@ const Options = () => {
           prefix={<UserOutlined />}
           maxLength={15}
           suffix={<small>{name.length}/15</small>}
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-            localStorage.setItem("name", e.target.value);
-          }}
+          value={localStorage.getItem("name")}
           className={classes.inputgroup}
         />
 
         <div className={classes.share_options}>
           <CopyToClipboard text={me}>
             <Button
-            style={{background:"#fff566"}}
+              style={{ background: "#fff566" }}
               type="#fadb14"
               icon={<CopyOutlined />}
               className={classes.btn}
@@ -103,7 +96,7 @@ const Options = () => {
               className={classes.share_icon}
             >
               <WhatsappIcon size={26} round />
-            </WhatsappShareButton>      
+            </WhatsappShareButton>
           </div>
         </div>
       </div>
@@ -137,7 +130,7 @@ const Options = () => {
           </Button>
         ) : (
           <Button
-          style={{background:'#7cb305'}}
+            style={{ background: "#7cb305" }}
             type="warning"
             icon={<PhoneOutlined />}
             onClick={() => {

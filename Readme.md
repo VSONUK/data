@@ -1,1 +1,1 @@
-Clone of MS Teams
+MS TEAMS clone.
